@@ -1,0 +1,51 @@
+//light-mode
+$light-peach: #D6A99D;
+$pastel-green:#D6DAC8;
+$pastel-yelow: #FBF3D5;
+$light-blue: #80A1BA;
+$white: #ffff;
+$ligth-bgc: #F0EBE3;
+
+//dark-mode
+$turquesa: #5A9690;
+$dark-turquesa: #2F5755;
+$dark-bgc: #432323;
+$dark-blue: #5C7285;
+
+$font-family: 'Ubuntu', sans-serif;
+
+$h1: 3rem;
+$h2: 2.25rem;
+$h3: 1.5rem;
+$h4: 1rem;
+$h5: .75rem;
+
+//spacing
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+
+//breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1440px;
+
+// Border Radius
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+
+// Transitions
+$transition-default: 0.3s ease;
+$transition-fast: 0.15s ease;
+$transition-slow: 0.55s ease;
