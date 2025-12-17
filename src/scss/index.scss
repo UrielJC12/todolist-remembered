@@ -1,0 +1,18 @@
+//config
+@use '../scss/variables' as *;
+@use '../scss/variables' as *;
+
+//base styles
+@use 'components/base';
+
+//layout
+@use 'layout/main';
+
+//components
+@use 'components/aside';
+@use 'components/base';
+@use 'components/buttons';
+@use 'components/header';
+@use 'components/nav';
+
+
