@@ -1,65 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" 
-    rel="stylesheet">
-    <link rel="stylesheet" href="./"
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/index.css">
     <title>Remembered</title>
 </head>
-<header>
-    <nav class="nav">
-        <ul class="nav-items_right">
-            <li class="nav-item">
-                <img src="./img/menu-svgrepo-com.svg" alt="svg">
-            </li>
-            <li class="nav-item">
-                <img src="./img/logo 2.svg" alt="svg">
-            </li>
-        </ul>
-        <ul class="nav-items_left">
-            <li>
-                <img src="./img/sun-season-svgrepo-com.svg" alt="svg">
-            </li>
-            <li>
-                <img src="./img/moon-svgrepo-com.svg" alt="svg">
-            </li>
-            <li>
-                <img src="./img/share-2-svgrepo-com.svg" alt="svg">
-            </li>
-        </ul>
-    </nav>    
-</header>
-<body>
-    <aside>
-        <header class="menubar">
-            <img src="./img/logo 2.svg" alt="svg">
-            <img src="./img/menu-svgrepo-com.svg" alt="svg">        
-        </header>
-        <section class="operations">
-            <div>
-                <h2>Today</h2>
-            </div>
-            <div>
-                <h2>Upcoming</h2>
-            </div>
-            <div>
-                <h2>Completed</h2>
-            </div>
-            <div>
-                <h2>Places</h2>
-            </div>
-            <div>
-                <h2>Calendar</h2>
-            </div>
-        </section>
-    </aside>
-    <article class="notebook">
-        <img src="./img/notebook-notepad-svgrepo-com.svg" alt="notepad">
 
-    </article>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav-items_left">
+                <li class="nav-item">
+                    <img src="src/assets/menu-svgrepo-com.svg" alt="svg">
+                </li>
+                <li class="nav-item">
+                    <img src="src/assets/logo-dark.svg" alt="svg">
+                </li>
+            </ul>
+            <ul class="nav-items_right">
+                <li>
+                    <img src="src/assets/sun-season-svgrepo-com.svg" alt="svg">
+                </li>
+                <li>
+                    <img src="src/assets/moon-svgrepo-com.svg" alt="svg">
+                </li>
+                <li>
+                    <img src="src/assets/share-2-svgrepo-com.svg" alt="svg">
+                </li>
+            </ul>
+        </nav>    
+    </header>
+
+    <div class="main-container">
+        <aside>
+            <header class="menubar">
+                <img src="src/assets/logo-dark.svg" alt="svg">
+                <img src="src/assets/menu-svgrepo-com.svg" alt="svg">        
+            </header>
+            <nav class="operations">
+                <a href="#today" class="nav-link active">Today</a>
+                <a href="#upcoming" class="nav-link">Upcoming</a>
+                <a href="#completed" class="nav-link">Completed</a>
+                <a href="#places" class="nav-link">Places</a>
+                <a href="#calendar" class="nav-link">Calendar</a>
+            </nav>
+        </aside>
+        <section class="notebook">
+            <img src="src/assets/notebook-notepad-svgrepo-com.svg" alt="notepad">
+    
+        </section>
+    </div>
 </body>
 </html>

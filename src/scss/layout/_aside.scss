@@ -1,0 +1,51 @@
+@use '../variables' as *;
+
+aside {
+    display: none;
+    position:fixed;
+    background-color: var(--color-nav, #DFD8CC);
+    width: 18.4rem;
+    top: 0%;
+    bottom: 0%;
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 10px;
+        img{
+            max-width: 150px;
+            &:last-child{
+                max-width: 30px;
+                cursor: pointer;
+        }
+        }
+
+        
+    }
+
+    .operations {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        gap: $spacing-xl;
+        box-sizing: border-box;
+
+        .nav-link{
+            color: var(--color-text);
+            font-weight: bold;
+            text-decoration: none;
+            background-color: var(--color-nav-component);
+            border-radius: $radius-md;
+            padding: 10px 5px; // El padding lateral ya no es necesario para el ancho
+            width: 80%;      // O un valor fijo como 200px
+            text-align: center; // Centra el texto dentro del div
+            transition: $transition-default, transform 0.2s ease;
+            &:hover {
+                background-color: var(--color-hover);
+                cursor: pointer;
+                transform: translateY(-1px);
+            }
+        }
+}
+}

@@ -1,16 +1,59 @@
-//light-mode
-$light-peach: #D6A99D;
-$pastel-green:#D6DAC8;
-$pastel-yelow: #FBF3D5;
-$light-blue: #80A1BA;
-$white: #ffff;
-$ligth-bgc: #F0EBE3;
+// NOTA: No importar `utilities` aquí para evitar ciclos de módulos.
+// Las utilidades pueden importar `variables`, pero `variables` no debe importar utilidades.
 
-//dark-mode
-$turquesa: #5A9690;
-$dark-turquesa: #2F5755;
-$dark-bgc: #432323;
-$dark-blue: #5C7285;
+// ===========================
+// 🎨 Paletas de color (Light / Dark)
+// Definimos variables SCSS para paleta y luego exponemos
+// las variables como CSS custom properties según el tema
+// ===========================
+
+// Light palette (fallback values)
+$light-hover: #CDC5B7;
+$light-nav-component: #DFD8CC;
+$light-bg: #F0EBE3;
+$light-text: #333333;
+$light-nav: #DFD8CC;
+$light-accent: #E8C4B0;
+
+$active-text: #CDC5B7;
+
+// Dark palette (fallback values)
+$dark-hover: #584141;
+$dark-nav-component: #3A2A2A;
+$dark-bg: #432323;
+$dark-text: #f5f5f5;
+$dark-nav: #3A2A2A;
+$dark-accent: #6B4423;
+
+// Exponer como variables CSS según data-theme
+:root[data-theme='light'] {
+	--color-hover: #{$light-hover};
+	--color-nav-component: #{$light-nav-component};
+	--color-bg: #{$light-bg};
+	--color-text: #{$light-text};
+	--color-nav: #{$light-nav};
+	--color-accent: #{$light-accent};
+	--color-active_text: #{$active-text};
+}
+
+:root[data-theme='dark'] {
+	--color-hover: #{$dark-hover};
+	--color-nav-component: #{$dark-nav-component};
+	--color-bg: #{$dark-bg};
+	--color-text: #{$dark-text};
+	--color-nav: #{$dark-nav};
+	--color-accent: #{$dark-accent};
+	--color-active_text: #{$active-text};
+}
+
+// SCSS variables que usan las CSS variables (para compatibilidad en mixins)
+$hover-color: var(--color-hover);
+$nav-component_color: var(--color-nav-component);
+$bg-color: var(--color-bg);
+$button-color: var(--color-button);
+$text-color: var(--color-text);
+$nav-color: var(--color-nav);
+$accent-color: var(--color-accent);
 
 $font-family: 'Ubuntu', sans-serif;
 

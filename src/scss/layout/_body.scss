@@ -1,0 +1,28 @@
+/* Esto hace que el menú lateral y el cuaderno compartan la misma fila */
+body {
+    display: flex;
+    flex-direction: column; /* Header arriba, resto abajo */
+    height: 100vh;
+    margin: 0;
+}
+
+/* Crea un contenedor para lo que va debajo del header */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1; /* Ocupa el resto del espacio vertical */
+}
+
+/* Asegura que la sección del cuaderno crezca para llenar el espacio */
+.notebook {
+    flex: 1; /* Esto obliga a la sección a ocupar todo el ancho restante */
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.notebook img {
+    max-width: 50%; /* Evita que sea gigante */
+}

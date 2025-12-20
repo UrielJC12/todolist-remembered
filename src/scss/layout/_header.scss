@@ -1,0 +1,68 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-bg);
+    align-items: center; /* Recomendado para centrar verticalmente los iconos */
+
+    .nav-items_left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 10px 5px 10px 1rem;
+        padding: 0; /* Quita el padding por defecto de la lista */
+        /* Quitamos el max-width de aquí para que la lista crezca */
+
+    .nav-item {
+        /* Primer elemento: El icono de menú */
+        &:first-child {
+            cursor: pointer;
+            max-width: 30px;
+        }
+
+        /* Segundo elemento: El logo */
+        &:nth-child(2) {
+            max-width: 200px;
+        }
+        
+        /* Asegura que las imágenes dentro no se desborden */
+        img {
+            width: 100%;
+            display: block;
+        }
+        }
+    }
+
+        .nav-items_right {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 1rem;
+            list-style-type: none;
+            margin: 10px 2em 10px 0;
+            // margin-top: 10px;
+            // margin-bottom: 10px;
+            // margin-right: 3rem;
+            padding: 0;
+
+            li {
+                max-width: 30px;    /* Limita el ancho del contenedor */
+                cursor: pointer;    /* Cambia el cursor a la mano */
+                display: flex;      /* Ayuda a alinear la imagen */
+                align-items: center;
+
+                img {
+                    width: 100%;    /* La imagen se ajusta a los 30px del li */
+                    height: auto;   /* Mantiene la proporción */
+                    display: block;
+                }
+                
+                /* Efecto opcional: un poco de feedback al pasar el mouse */
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+    }
+}

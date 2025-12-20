@@ -1,0 +1,170 @@
+@charset "UTF-8";
+:root[data-theme=light] {
+  --color-hover: #CDC5B7;
+  --color-nav-component: #DFD8CC;
+  --color-bg: #F0EBE3;
+  --color-text: #333333;
+  --color-nav: #DFD8CC;
+  --color-accent: #E8C4B0;
+  --color-active_text: #CDC5B7;
+}
+
+:root[data-theme=dark] {
+  --color-hover: #584141;
+  --color-nav-component: #3A2A2A;
+  --color-bg: #432323;
+  --color-text: #f5f5f5;
+  --color-nav: #3A2A2A;
+  --color-accent: #6B4423;
+  --color-active_text: #CDC5B7;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  align-items: center; /* Recomendado para centrar verticalmente los iconos */
+}
+.nav .nav-items_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  list-style-type: none;
+  margin: 10px 5px 10px 1rem;
+  padding: 0; /* Quita el padding por defecto de la lista */
+  /* Quitamos el max-width de aquí para que la lista crezca */
+}
+.nav .nav-items_left .nav-item {
+  /* Primer elemento: El icono de menú */
+}
+.nav .nav-items_left .nav-item:first-child {
+  cursor: pointer;
+  max-width: 30px;
+}
+.nav .nav-items_left .nav-item {
+  /* Segundo elemento: El logo */
+}
+.nav .nav-items_left .nav-item:nth-child(2) {
+  max-width: 200px;
+}
+.nav .nav-items_left .nav-item {
+  /* Asegura que las imágenes dentro no se desborden */
+}
+.nav .nav-items_left .nav-item img {
+  width: 100%;
+  display: block;
+}
+.nav .nav-items_right {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 10px 2em 10px 0;
+  padding: 0;
+}
+.nav .nav-items_right li {
+  max-width: 30px; /* Limita el ancho del contenedor */
+  cursor: pointer; /* Cambia el cursor a la mano */
+  display: flex; /* Ayuda a alinear la imagen */
+  align-items: center;
+}
+.nav .nav-items_right li img {
+  width: 100%; /* La imagen se ajusta a los 30px del li */
+  height: auto; /* Mantiene la proporción */
+  display: block;
+}
+.nav .nav-items_right li {
+  /* Efecto opcional: un poco de feedback al pasar el mouse */
+}
+.nav .nav-items_right li:hover {
+  opacity: 0.7;
+}
+
+aside {
+  display: none;
+  position: fixed;
+  background-color: var(--color-nav, #DFD8CC);
+  width: 18.4rem;
+  top: 0%;
+  bottom: 0%;
+}
+aside header {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+}
+aside header img {
+  max-width: 150px;
+}
+aside header img:last-child {
+  max-width: 30px;
+  cursor: pointer;
+}
+aside .operations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+aside .operations .nav-link {
+  color: var(--color-text);
+  font-weight: bold;
+  text-decoration: none;
+  background-color: var(--color-nav-component);
+  border-radius: 0.5rem;
+  padding: 10px 5px;
+  width: 80%;
+  text-align: center;
+  transition: 0.3s ease, transform 0.2s ease;
+}
+aside .operations .nav-link:hover {
+  background-color: var(--color-hover);
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+
+/* Esto hace que el menú lateral y el cuaderno compartan la misma fila */
+body {
+  display: flex;
+  flex-direction: column; /* Header arriba, resto abajo */
+  height: 100vh;
+  margin: 0;
+}
+
+/* Crea un contenedor para lo que va debajo del header */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1; /* Ocupa el resto del espacio vertical */
+}
+
+/* Asegura que la sección del cuaderno crezca para llenar el espacio */
+.notebook {
+  flex: 1; /* Esto obliga a la sección a ocupar todo el ancho restante */
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.notebook img {
+  max-width: 50%; /* Evita que sea gigante */
+}

@@ -1,4 +1,21 @@
-@use '../scss/variables' as *;
+@use './variables' as *;
+
+// ===========================
+//Utilities & Theme Helpers
+// ===========================
+
+// Helpers para usar las CSS variables exposadas en _variables.scss
+@mixin color-var($name) {
+    color: var(--#{$name});
+}
+
+@mixin bg-var($name) {
+    background-color: var(--#{$name});
+}
+
+@mixin border-var($name) {
+    border-color: var(--#{$name});
+}
 
 // Media queries
 @mixin respond-to($breakpoint) {
@@ -29,4 +46,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+// Atajo: aplicar estilos solo si el sistema prefiere modo oscuro
+@mixin prefers-dark {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
 }
