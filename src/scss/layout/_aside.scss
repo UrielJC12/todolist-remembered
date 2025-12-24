@@ -1,51 +1,133 @@
-@use '../variables' as *;
+@use './variables' as *;
+@use './utilities' as *;
 
 aside {
-    display: none;
+    transform: translateX(-100%);
     position:fixed;
     background-color: var(--color-nav, #DFD8CC);
     width: 18.4rem;
     top: 0%;
     bottom: 0%;
+    transition: $transition-slow;
     header {
         display: flex;
         justify-content: space-between;
-        margin: 5px 10px;
+        margin: 15px 10px;
+        .logo-dark{
+            display: block;
+        }
+        .logo-light{
+            display: none;
+        }
+        @include apply-dark-mode-logic{
+            .logo-dark{
+                display: none;
+            }
+            .logo-light{
+                display: block;
+            }
+        }
+
+        .menu-dark{
+            display: block;
+            max-width: 30px;
+            cursor: pointer;
+        }
+        .menu-light{
+            display: none;
+        }
+        
+        @include apply-dark-mode-logic{
+            .menu-dark{display: none; }
+            .menu-light{ display: block; }
+        }
+        
         img{
+            
+            
             max-width: 150px;
             &:last-child{
                 max-width: 30px;
                 cursor: pointer;
+
+                
         }
         }
 
         
     }
 
-    .operations {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        gap: $spacing-xl;
-        box-sizing: border-box;
+.operations {
+    // ... tus estilos del contenedor padre se quedan igual ...
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    gap: $spacing-xl;
+    box-sizing: border-box;
+    height: 90vh;
 
-        .nav-link{
-            color: var(--color-text);
-            font-weight: bold;
-            text-decoration: none;
-            background-color: var(--color-nav-component);
-            border-radius: $radius-md;
-            padding: 10px 5px; // El padding lateral ya no es necesario para el ancho
-            width: 80%;      // O un valor fijo como 200px
-            text-align: center; // Centra el texto dentro del div
-            transition: $transition-default, transform 0.2s ease;
-            &:hover {
-                background-color: var(--color-hover);
-                cursor: pointer;
-                transform: translateY(-1px);
-            }
+    .nav-link {
+        // 1. Convertimos el enlace en un contenedor Flex
+        display: flex; 
+        
+        // 2. Alineamos los ítems (texto e imagen) al centro verticalmente
+        align-items: center; 
+        
+        // 3. Centramos el grupo (texto + imagen) horizontalmente dentro del botón
+        justify-content: center; 
+        
+        // 4. Agregamos espacio entre la palabra "Settings" y la imagen
+        gap: 10px; 
+
+        &:last-child{
+            margin-top: auto;
+            margin-bottom: 20px;
         }
+
+        color: var(--color-text);
+        font-weight: bold;
+        text-decoration: none;
+        background-color: var(--color-nav-component);
+        border-radius: $radius-md;
+        padding: 10px 5px;
+        width: 80%;
+        
+        // text-align: center; // Ya no es necesario al usar flex + justify-content
+        
+        transition: $transition-default, transform 0.2s ease;
+
+        &:hover {
+            background-color: var(--color-hover);
+            cursor: pointer;
+            transform: translateY(-1px);
+        }
+
+        .settings-dark{
+            display: block;
+        }
+        .settings-light{
+            display: none;
+        }
+
+        @include apply-dark-mode-logic{
+            .settings-dark{ display: none; }
+            .settings-light{ display: block;}
+        }
+        img {
+
+            // 5. Limpiamos los estilos de la imagen. 
+            // No necesita ser flex, solo controlamos su tamaño.
+            max-width: 20px; // Ajusta este tamaño según necesites
+            height: auto;
+            display: block; // Ayuda a evitar espacios fantasma
+        }
+    }
 }
+
+&.toggle{
+    transform: translateX(0%);
+}
+
 }

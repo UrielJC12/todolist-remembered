@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './utilities' as *;
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -14,17 +17,42 @@
         margin: 10px 5px 10px 1rem;
         padding: 0; /* Quita el padding por defecto de la lista */
         /* Quitamos el max-width de aquí para que la lista crezca */
-
     .nav-item {
         /* Primer elemento: El icono de menú */
         &:first-child {
             cursor: pointer;
             max-width: 30px;
+            .menu-dark{
+                display: block;
+            }
+            .menu-light{
+                display: none;
+                width: 30px;
+            }
+            @include apply-dark-mode-logic{
+                .menu-dark{ display: none; }
+                .menu-light {display: block;}
+            }
+
+            &:hover{
+                opacity: 0.7;
+            }
         }
 
         /* Segundo elemento: El logo */
         &:nth-child(2) {
             max-width: 200px;
+            .logo-dark {
+                display: block; 
+                }
+            .logo-light {
+                display: none; 
+            }
+            @include apply-dark-mode-logic{
+                .logo-dark { display: none; }
+                .logo-light { display: block; }
+            }
+
         }
         
         /* Asegura que las imágenes dentro no se desborden */
@@ -47,6 +75,30 @@
             // margin-right: 3rem;
             padding: 0;
 
+            .sun{
+                display: none;
+            }
+
+            .moon{
+                display: block;
+            }
+            @include apply-dark-mode-logic{
+                .sun{ display: block;}
+                .moon{ display: none;}
+            }
+
+            .download-dark{
+                display: block;
+            }
+            .download-light{
+                display: none;
+            }
+
+            @include apply-dark-mode-logic{
+                .download-dark { display: none; }
+                .download-light { display: block; }
+            }
+
             li {
                 max-width: 30px;    /* Limita el ancho del contenedor */
                 cursor: pointer;    /* Cambia el cursor a la mano */
@@ -55,8 +107,9 @@
 
                 img {
                     width: 100%;    /* La imagen se ajusta a los 30px del li */
-                    height: auto;   /* Mantiene la proporción */
+                    height: auto;   
                     display: block;
+                    
                 }
                 
                 /* Efecto opcional: un poco de feedback al pasar el mouse */

@@ -1,9 +1,13 @@
+@use './variables' as *;
+@use './utilities' as *;
+
 /* Esto hace que el menú lateral y el cuaderno compartan la misma fila */
 body {
     display: flex;
     flex-direction: column; /* Header arriba, resto abajo */
     height: 100vh;
     margin: 0;
+    transition: $transition-default;
 }
 
 /* Crea un contenedor para lo que va debajo del header */
@@ -21,8 +25,21 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    @include respond-to('tablet') {
+        padding: 0%;
+    }
+    
+    /* 2. Dejas el de Phone al final para que tenga prioridad en cels */
+    @include respond-to('phone') {
+        padding: 0%;
+    }
 }
 
 .notebook img {
-    max-width: 50%; /* Evita que sea gigante */
+    width: 100%; 
+    max-width: 800px;
+    height: auto;
+
+
 }
+

@@ -48,9 +48,60 @@
     align-items: center;
 }
 
-// Atajo: aplicar estilos solo si el sistema prefiere modo oscuro
-@mixin prefers-dark {
+@mixin apply-light-theme {
+    --color-hover: #{$light-hover};
+    --color-nav-component: #{$light-nav-component};
+    --color-bg: #{$light-bg};
+    --color-text: #{$light-text};
+    --color-nav: #{$light-nav};
+    --color-accent: #{$light-accent};
+    --color-active_text: #{$active-text};
+}
+
+@mixin apply-dark-theme {
+    --color-hover: #{$dark-hover};
+    --color-nav-component: #{$dark-nav-component};
+    --color-bg: #{$dark-bg};
+    --color-text: #{$dark-text};
+    --color-nav: #{$dark-nav};
+    --color-accent: #{$dark-accent};
+    --color-active_text: #{$active-text};
+}
+
+// 2. Aplicación de la lógica
+:root {
+    // A. Estado por defecto (Tema Claro)
+    @include apply-light-theme;
+
+    // B. Detectar preferencia del sistema (Tema Oscuro Automático)
     @media (prefers-color-scheme: dark) {
-        @content;
+        @include apply-dark-theme;
     }
 }
+
+// C. Overrides Manuales (Mayor especificidad)
+// Esto permite que el usuario fuerce un tema con un botón, ignorando su sistema
+:root[data-theme='light'] {
+    @include apply-light-theme;
+}
+
+:root[data-theme='dark'] {
+    @include apply-dark-theme;
+}
+
+@mixin apply-dark-mode-logic {
+    // CASO 1: El usuario FORZÓ el modo oscuro manualmente (botón)
+    // Esto ocurre fuera de la media query, así que siempre funciona.
+    :root[data-theme='dark'] & {
+        @content;
+    }
+
+    // CASO 2: Automático por sistema
+    // Solo se activa si el sistema es oscuro Y el usuario no forzó 'light'
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) & {
+            @content;
+        }
+    }
+}
+

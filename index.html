@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
+    <!-- data-theme="light" -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/index.css">
+    <script src="/src/js/functions.js" defer></script>
     <title>Remembered</title>
 </head>
 
@@ -14,32 +16,35 @@
     <header>
         <nav class="nav">
             <ul class="nav-items_left">
-                <li class="nav-item">
-                    <img src="src/assets/menu-svgrepo-com.svg" alt="svg">
+                <li class="nav-item menu">
+                    <img class="menu-dark" src="src/assets/menu-svgrepo-com.svg" alt="svg">
+                    <img class="menu-light" src="src/assets/menu-light.svg" alt="svg">
                 </li>
                 <li class="nav-item">
-                    <img src="src/assets/logo-dark.svg" alt="svg">
+                    <img class="logo-dark" src="src/assets/logo-dark.svg" alt="svg">
+                    <img class="logo-light" src="./src/assets/logo-light.svg" alt="svg light">
                 </li>
             </ul>
             <ul class="nav-items_right">
-                <li>
-                    <img src="src/assets/sun-season-svgrepo-com.svg" alt="svg">
+                <li id="theme-toggle">
+                    <img class="sun" src="src/assets/sun-season-svgrepo-com.svg" alt="sun">
+                    <img class="moon" src="src/assets/moon-svgrepo-com.svg" alt="moon">
                 </li>
                 <li>
-                    <img src="src/assets/moon-svgrepo-com.svg" alt="svg">
-                </li>
-                <li>
-                    <img src="src/assets/share-2-svgrepo-com.svg" alt="svg">
+                    <img class="download-dark" src="src/assets/download-dark.svg" alt="svg">
+                    <img class="download-light" src="src/assets/download-light.svg" alt="svg">
                 </li>
             </ul>
         </nav>    
     </header>
 
     <div class="main-container">
-        <aside>
+        <aside class="aside">
             <header class="menubar">
-                <img src="src/assets/logo-dark.svg" alt="svg">
-                <img src="src/assets/menu-svgrepo-com.svg" alt="svg">        
+                <img class="logo-dark" src="src/assets/logo-dark.svg" alt="svg">
+                <img class="logo-light" src="src/assets/logo-light.svg" alt="svg">
+                <img class="menu-dark menu" src="src/assets/menu-svgrepo-com.svg" alt="svg">
+                <img class="menu-light menu" src="src/assets/menu-light.svg" alt="svg">
             </header>
             <nav class="operations">
                 <a href="#today" class="nav-link active">Today</a>
@@ -47,6 +52,10 @@
                 <a href="#completed" class="nav-link">Completed</a>
                 <a href="#places" class="nav-link">Places</a>
                 <a href="#calendar" class="nav-link">Calendar</a>
+                <a class="nav-link">Settings
+                    <img class="settings-dark" src="src/assets/settings-dark.svg" alt="svg">
+                    <img class="settings-light" src="src/assets/settings-light.svg" alt="svg">
+                </a>
             </nav>
         </aside>
         <section class="notebook">
