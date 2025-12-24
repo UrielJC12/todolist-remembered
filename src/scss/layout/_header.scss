@@ -18,7 +18,7 @@
         padding: 0; /* Quita el padding por defecto de la lista */
         /* Quitamos el max-width de aquí para que la lista crezca */
     .nav-item {
-        /* Primer elemento: El icono de menú */
+        
         &:first-child {
             cursor: pointer;
             max-width: 30px;
