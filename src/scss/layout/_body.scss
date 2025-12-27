@@ -29,7 +29,6 @@ body {
         padding: 0%;
     }
     
-    /* 2. Dejas el de Phone al final para que tenga prioridad en cels */
     @include respond-to('phone') {
         padding: 0%;
     }

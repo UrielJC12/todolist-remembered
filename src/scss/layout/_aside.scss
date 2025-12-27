@@ -94,7 +94,6 @@ aside {
         padding: 10px 5px;
         width: 80%;
         
-        // text-align: center; // Ya no es necesario al usar flex + justify-content
         
         transition: $transition-default, transform 0.2s ease;
 
@@ -117,11 +116,9 @@ aside {
         }
         img {
 
-            // 5. Limpiamos los estilos de la imagen. 
-            // No necesita ser flex, solo controlamos su tamaño.
-            max-width: 20px; // Ajusta este tamaño según necesites
+            max-width: 20px; 
             height: auto;
-            display: block; // Ayuda a evitar espacios fantasma
+            display: block; 
         }
     }
 }
