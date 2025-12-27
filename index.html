@@ -58,10 +58,23 @@
                 </a>
             </nav>
         </aside>
-        <section class="notebook">
-            <img src="src/assets/notebook-notepad-svgrepo-com.svg" alt="notepad">
-    
-        </section>
-    </div>
+    <section class="notebook">
+        <div class="page" id="pageToCapture">
+            <img src="src/assets/notebook.svg" class="notebook-bg" alt="notepad">
+            
+            <div class="notebook-content">
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your note">
+                    <button type="button" onclick="addTask()">Add</button>
+                </div>
+                <ul id="list-container">
+                    <!-- <li class="checked">Task 1</li>
+                    <li>Task 2</li>
+                    <li>Task 3</li> -->
+
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
